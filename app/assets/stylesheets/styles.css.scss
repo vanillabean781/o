@@ -21,7 +21,10 @@ body {
 .footer {
 	margin-top: 50px;	
 	color: $grayLight; 
-	a { color: $gray;}
+	/*width: 4200px; */
+	a { 
+		color: $gray;
+	}
 }
 
 
