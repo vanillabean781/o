@@ -1,5 +1,5 @@
 class Pin < ActiveRecord::Base
-  	attr_accessible :description, :image, :image_remote_url
+  	attr_accessible :description, :image, :image_remote_url, :collection_id
 
 
   	validates :description, presence: true
@@ -12,7 +12,8 @@ class Pin < ActiveRecord::Base
 
 
   	belongs_to :user
-  	
+  	belongs_to :collection
+
     def image_remote_url=(url_value)
       self.image = URI.parse(url_value) unless url_value.blank?
       super 

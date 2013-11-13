@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131014201806) do
+ActiveRecord::Schema.define(:version => 20131113011007) do
+
+  create_table "collections", :force => true do |t|
+    t.string   "description"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "collection_name"
+    t.integer  "user_id"
+  end
+
+  add_index "collections", ["user_id"], :name => "index_collections_on_user_id"
 
   create_table "pins", :force => true do |t|
     t.string   "description"
@@ -23,8 +33,10 @@ ActiveRecord::Schema.define(:version => 20131014201806) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "image_remote_url"
+    t.integer  "collection_id"
   end
 
+  add_index "pins", ["collection_id"], :name => "index_pins_on_collection_id"
   add_index "pins", ["user_id"], :name => "index_pins_on_user_id"
 
   create_table "users", :force => true do |t|

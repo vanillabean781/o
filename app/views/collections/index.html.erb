@@ -1,0 +1,22 @@
+<h3>Photo collections</h3>
+
+<table class = "table">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+</thead>
+
+  <tbody>
+    <%= render @collections %>
+  </tbody>
+</table>
+
+<br />
+
+<p>
+<%= link_to "Add +", new_collection_path, class: "btn btn-primary btn-small" %>
+</p>

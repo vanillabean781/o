@@ -1,14 +1,15 @@
-<% unless user_signed_in? %>
 
 <div class="hero-unit">
-	<h1>Welcome to OMR!</h1>
-	<p>You've found my home page:
-	<%= link_to "Google Search", "http://google.com" %>
-
+	<h2>You've found my home page!</h2>
+	<p>Find me here on
+	<%= link_to "LinkedIn", "http://www.linkedin.com/pub/soniya-sapre/4/87b/362/" %>, 
+	<%= link_to "Foursquare", "https://foursquare.com/soni24" %>,  
+	<%= link_to "Twitter", "http://twitter.com/soni24" %>,
+	<%= link_to "Instagram", "http://instagram.com/soni24" %>, and
+	<%= link_to "Flickr", "http://flickr.com/soniya" %>. 
 	</p>
 	<p>
-	<%= link_to "Sign up Now!", new_user_registration_path, class: "btn btn-primary btn-small" %>
+	<%= link_to "Sign up to post photos!", new_user_registration_path, class: "btn btn-primary btn-small" %>
 	</p>
 </div>
 
-<%end%>

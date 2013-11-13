@@ -1,4 +1,7 @@
 Omrails::Application.routes.draw do
+  resources :collections
+
+
   get "users/show"
 
   resources :pins
@@ -8,8 +11,10 @@ Omrails::Application.routes.draw do
 
   match 'users/:id' => 'users#show', as: :user
 
-  get 'about' => 'pages#about'
+  get 'photos' => 'collections#index'
   
+  get 'projects' => 'pages#projects'
+
   root :to => 'pins#index'
   
 
