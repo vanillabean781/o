@@ -5,6 +5,7 @@ Omrails::Application.routes.draw do
   get "users/show"
 
   resources :pins
+  resources :collections
 
 
   devise_for :users
