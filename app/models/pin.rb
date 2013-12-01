@@ -1,5 +1,5 @@
 class Pin < ActiveRecord::Base
-  	attr_accessible :description, :image, :image_remote_url, :collection_id
+  	attr_accessible :description, :image, :image_remote_url, :collection_id, :tag
 
 
   	validates :description, presence: true
@@ -18,6 +18,9 @@ class Pin < ActiveRecord::Base
       self.image = URI.parse(url_value) unless url_value.blank?
       super 
     end
-
+    
+    def pin_params
+      params.permit(:id, :tag)
+    end
 
 end

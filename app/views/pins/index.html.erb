@@ -1,4 +1,6 @@
 <%= render 'pages/home' %>
+
+<% if user_signed_in? %>
 <div id="pins">
   <%= render @pins %>
 
@@ -7,3 +9,5 @@
 <div class="container">
 <%= will_paginate @pins %>
 </div>
+
+<%end%>

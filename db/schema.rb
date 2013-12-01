@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131113011007) do
+ActiveRecord::Schema.define(:version => 20131118193539) do
 
   create_table "collections", :force => true do |t|
     t.string   "description"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20131113011007) do
     t.datetime "image_updated_at"
     t.string   "image_remote_url"
     t.integer  "collection_id"
+    t.string   "tag"
   end
 
   add_index "pins", ["collection_id"], :name => "index_pins_on_collection_id"

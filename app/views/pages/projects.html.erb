@@ -1,5 +1,12 @@
 <h3> Recent projects </h3>
-<p>
-	Coming soon
-</p>
 
+<h1>Listing projects</h1>
+ 
+
+<% @pins.each do |pin| %>
+  <tr>
+    <td><%= pin.description %></td>
+  </tr>
+<% end %>
+
+ 

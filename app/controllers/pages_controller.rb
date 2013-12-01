@@ -7,8 +7,13 @@ class PagesController < ApplicationController
  end
 
 def pin_params
-   params.require(:pin).permit(:description, :image)
+   params.permit(:pin,:description, :image, :tag)
 end
+
+def projects
+  @pin = Pin.all
+end
+
 
 end
 

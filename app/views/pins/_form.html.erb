@@ -13,7 +13,8 @@
 
     <%= f.input :collection_id, :collection => Collection.all, :label_method => :collection_name, :prompt => "Select One" %>
 
-  
+    <%= f.input :tag, as: :text, input_html: {rows: "1"} %>  
+    
   <div class="form-actions">
     <%= f.button :submit , class: "btn btn-primary"%>
   </div>

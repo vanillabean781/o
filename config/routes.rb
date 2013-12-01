@@ -1,24 +1,30 @@
 Omrails::Application.routes.draw do
   resources :collections
 
-
   get "users/show"
 
-  resources :pins
-  resources :collections
+  resources :pins do
 
+      #match '/:tag', to: 'pins#index', as: 'filter'
+  end
 
   devise_for :users
 
   match 'users/:id' => 'users#show', as: :user
 
+  match '/pins/:tag' => 'pins#index', as: 'filter'
+
+  
+  #map.connect 'pins/*other', :controller => 'pins', :action => 'projects',
+
   get 'photos' => 'collections#index'
   
-  get 'projects' => 'pages#projects'
+  match "/pins/:tag" => "pins#index"
+
+  get 'projects' => 'pins#project'
 
   root :to => 'pins#index'
   
-
 
 
   # The priority is based upon order of creation:
